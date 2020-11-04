@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int main(){
+int main_printfscanf(){
 
 	char name[256];
 	printf("이름이 뭐에요?");
