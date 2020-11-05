@@ -114,7 +114,7 @@ void SLL_insertBefore(Node** head, Node* current, Node* newNode) {
 	}
 }
 
-int main() {
+int SLL_LinnkedList_main() {
 
 	Node* linkedList = NULL; //링크드리스트 선언
 	Node* newNode = NULL; //새로 생성한 노드를 담을 변수
