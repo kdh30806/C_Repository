@@ -2,7 +2,7 @@
 #include <time.h>
 #include <stdlib.h>
 
-int main() {
+int condition_main() {
 	/*int age = 25;
 
 	if (age >= 20) {
