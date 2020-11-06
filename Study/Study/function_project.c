@@ -6,14 +6,14 @@ void showQuestion(int level, int num1, int num2);
 void success();
 void fail();
 
-int main(void) {
+int function_project_main(void) {
 
 	//문이 5개가 있고, 각 문마다 점점 어려운 수식 퀴즈가 출제
 	// 맞히면 통과, 틀리면 실패
 
 	srand(time(NULL));
 	int count = 0;
-	for (int i = 1; i < 5; i++) {
+	for (int i = 1; i <= 5; i++) {
 
 		int num1 = getRandomNumber(i);
 		int num2 = getRandomNumber(i);

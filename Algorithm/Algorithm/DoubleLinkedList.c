@@ -36,10 +36,12 @@ void DLL_AppendNode(Node** Head, Node* NewNode) {
 }
 
 Node* DLL_GetNodeAt(Node* Head, int location) {
+
 	Node* current = Head;
 
-	while (current != NULL && (--location) >= 0) {
+	while (current != NULL && location > 1) {
 		current = current->NextNode;
+		location--;
 	}
 
 	return current;
@@ -71,8 +73,8 @@ void DLL_RemoveNode(Node** Head, Node* Remove) {
 void DLL_InsertAfter(Node* Current, Node* NewNode) {
 	// Current 뒤에 NewNode 추가
 
-	NewNode->PrevNode = Current;
 	NewNode->NextNode = Current->NextNode;
+	NewNode->PrevNode = Current;
 
 	if (Current->NextNode != NULL) {
 		Current->NextNode->PrevNode = NewNode;
@@ -80,7 +82,7 @@ void DLL_InsertAfter(Node* Current, Node* NewNode) {
 	Current->NextNode = NewNode;
 }
 
-void DLL_GetNodeCount(Node* Head) {
+int DLL_GetNodeCount(Node* Head) {
 
 	int count = 0;
 	Node* Current = Head;
@@ -90,9 +92,44 @@ void DLL_GetNodeCount(Node* Head) {
 	}
 
 	return count;
+}
 
+void DLL_OutData(Node* Head) {
+
+	Node* Current = Head;
+
+	for (int i = 1; i <= DLL_GetNodeCount(Current); i++) {
+
+		Node* node = DLL_GetNodeAt(Current, i);
+
+		printf("%d번째 데이터는 %d입니다.\n", i+1, node->Data);
+	}
 }
 
 int main() {
+
+	Node* DLL_List = NULL;
+	Node* NewNode = NULL;
+
+	NewNode = DLL_CreatNode(10);
+	DLL_AppendNode(&DLL_List, NewNode);
+
+	NewNode= DLL_CreatNode(9);
+	DLL_AppendNode(&DLL_List, NewNode);
+
+	NewNode = DLL_CreatNode(13);
+	DLL_AppendNode(&DLL_List, NewNode);
+
+	NewNode = DLL_CreatNode(14);
+	DLL_AppendNode(&DLL_List, NewNode);
+
+	NewNode = DLL_CreatNode(15);
+	DLL_AppendNode(&DLL_List, NewNode);
+
+	NewNode = DLL_CreatNode(100);
+	DLL_InsertAfter(DLL_GetNodeAt(DLL_List,1), NewNode);
+
+	DLL_OutData(DLL_List);
+
 	return 0;
 }
