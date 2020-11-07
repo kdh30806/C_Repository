@@ -22,6 +22,7 @@
     <ClCompile Include="condition.c" />
     <ClCompile Include="function.c" />
     <ClCompile Include="function_project.c" />
+    <ClCompile Include="pointer.c" />
     <ClCompile Include="printfscanf.c" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
