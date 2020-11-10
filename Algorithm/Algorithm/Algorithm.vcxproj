@@ -139,8 +139,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ArrayStack.c" />
     <ClCompile Include="DoubleLinkedList.c" />
     <ClCompile Include="LinkedList.c" />
+    <ClCompile Include="LinkedListStack.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
