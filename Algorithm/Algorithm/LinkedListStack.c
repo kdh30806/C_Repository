@@ -2,17 +2,7 @@
 #include <malloc.h>
 #include <string.h>
 
-typedef struct tagNode
-{
-	char* Data;
-	struct Node* NextNode;
-} Node;
-
-typedef struct tagLinkedListStack
-{
-	Node* Top;
-	Node* List; //Head 
-} LinkedListStack;
+#include "LinkedListStack.h"
 
 void LLS_CreateStack(LinkedListStack** Stack) {
 	(*Stack) = (LinkedListStack*)malloc(sizeof(LinkedListStack));
@@ -33,7 +23,7 @@ Node* LLS_CreateNode(char* NewData) {
 	Node* NewNode = (Node*)malloc(sizeof(Node));
 	NewNode->Data = (char*)malloc(sizeof(strlen(NewData) + 1));
 
-	strcpy(NewNode->Data, NewData);
+	strcpy_s(NewNode->Data, NewData, NewNode);
 
 	NewNode->NextNode = NULL;
 
@@ -61,7 +51,7 @@ void LLS_Push(LinkedListStack* Stack, Node* NewNode) {
 	Stack->Top = NewNode;
 }
 
-Node* LLS_PopNode(LinkedListStack* Stack) {
+Node* LLS_Pop(LinkedListStack* Stack) {
 	Node* TopNode = Stack->Top;
 
 	if (Stack->List == Stack->Top) {
@@ -94,4 +84,8 @@ int LLS_GetSize(LinkedListStack* Stack) {
 
 int LLS_IsEmpty(LinkedListStack* Stack) {
 	return (Stack->List == NULL);
+}
+
+Node* LLS_Top(LinkedListStack* Stack) {
+	return Stack->Top;
 }

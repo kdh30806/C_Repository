@@ -106,7 +106,7 @@ void DLL_OutData(Node* Head) {
 	}
 }
 
-int main() {
+int main_DoubleLinkedList() {
 
 	Node* DLL_List = NULL;
 	Node* NewNode = NULL;

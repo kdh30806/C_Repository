@@ -140,9 +140,15 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ArrayStack.c" />
+    <ClCompile Include="Calculator.c" />
     <ClCompile Include="DoubleLinkedList.c" />
     <ClCompile Include="LinkedList.c" />
     <ClCompile Include="LinkedListStack.c" />
+    <ClCompile Include="Test_Calculator.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Calculator.h" />
+    <ClInclude Include="LinkedListStack.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
