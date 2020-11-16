@@ -2,7 +2,7 @@
 #include <string.h>
 #include "Calculator.h"
 
-int main(void) {
+int main_Test_Calculator(void) {
 	char InfixExpression[100];
 	char PostfixExpression[100];
 
@@ -16,9 +16,9 @@ int main(void) {
 	GetPostfix(InfixExpression, PostfixExpression);
 	printf("Infix: %s\n Postfix %s\n", InfixExpression, PostfixExpression);
 
-	/*Result = Calculate(PostfixExpression);
+	Result = Calculate(PostfixExpression);
 
-	printf("Ca5lculation Result : %f\n", Result);*/
+	printf("Ca5lculation Result : %f\n", Result);
 
 
 	return 0;

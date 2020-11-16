@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <malloc.h>
 #include <string.h>
-
+#pragma warning(disable : 4996)
 #include "LinkedListStack.h"
 
 void LLS_CreateStack(LinkedListStack** Stack) {
@@ -21,9 +21,9 @@ void LLS_DestroyStack(LinkedListStack* Stack) {
 
 Node* LLS_CreateNode(char* NewData) {
 	Node* NewNode = (Node*)malloc(sizeof(Node));
-	NewNode->Data = (char*)malloc(sizeof(strlen(NewData) + 1));
+	NewNode->Data = (char*)malloc(strlen(NewData) + 1);
 
-	strcpy_s(NewNode->Data, NewData, NewNode);
+	strcpy(NewNode->Data, NewData);
 
 	NewNode->NextNode = NULL;
 

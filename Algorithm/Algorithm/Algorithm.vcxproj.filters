@@ -33,12 +33,30 @@
     <ClCompile Include="Test_Calculator.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="CircularQueue.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Test_CircularQueue.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="LinkedQueue.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Test_LinkedQueue.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="LinkedListStack.h">
       <Filter>소스 파일</Filter>
     </ClInclude>
     <ClInclude Include="Calculator.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="CircularQueue.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="LinkedQueue.h">
       <Filter>소스 파일</Filter>
     </ClInclude>
   </ItemGroup>
