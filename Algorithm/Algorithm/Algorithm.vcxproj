@@ -143,16 +143,19 @@
     <ClCompile Include="Calculator.c" />
     <ClCompile Include="CircularQueue.c" />
     <ClCompile Include="DoubleLinkedList.c" />
+    <ClCompile Include="LCRSTree.c" />
     <ClCompile Include="LinkedList.c" />
     <ClCompile Include="LinkedListStack.c" />
     <ClCompile Include="LinkedQueue.c" />
     <ClCompile Include="Test_Calculator.c" />
     <ClCompile Include="Test_CircularQueue.c" />
+    <ClCompile Include="Test_LCRSTree.c" />
     <ClCompile Include="Test_LinkedQueue.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Calculator.h" />
     <ClInclude Include="CircularQueue.h" />
+    <ClInclude Include="LCRSTree.h" />
     <ClInclude Include="LinkedListStack.h" />
     <ClInclude Include="LinkedQueue.h" />
   </ItemGroup>

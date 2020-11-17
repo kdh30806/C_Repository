@@ -1,6 +1,6 @@
 #include "LinkedQueue.h"
 
-int main(void) {
+int main_LinkedQueue(void) {
 
 	Node* Popped ;
 	LinkedQueue* Queue;

@@ -45,6 +45,12 @@
     <ClCompile Include="Test_LinkedQueue.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="LCRSTree.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Test_LCRSTree.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="LinkedListStack.h">
@@ -57,6 +63,9 @@
       <Filter>소스 파일</Filter>
     </ClInclude>
     <ClInclude Include="LinkedQueue.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="LCRSTree.h">
       <Filter>소스 파일</Filter>
     </ClInclude>
   </ItemGroup>
