@@ -147,6 +147,8 @@
     <ClCompile Include="LinkedList.c" />
     <ClCompile Include="LinkedListStack.c" />
     <ClCompile Include="LinkedQueue.c" />
+    <ClCompile Include="SBTTree.c" />
+    <ClCompile Include="Test_BCTTree.c" />
     <ClCompile Include="Test_Calculator.c" />
     <ClCompile Include="Test_CircularQueue.c" />
     <ClCompile Include="Test_LCRSTree.c" />
@@ -158,6 +160,7 @@
     <ClInclude Include="LCRSTree.h" />
     <ClInclude Include="LinkedListStack.h" />
     <ClInclude Include="LinkedQueue.h" />
+    <ClInclude Include="SBTTree.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

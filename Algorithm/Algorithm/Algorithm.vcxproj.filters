@@ -51,6 +51,12 @@
     <ClCompile Include="Test_LCRSTree.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="SBTTree.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Test_BCTTree.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="LinkedListStack.h">
@@ -66,6 +72,9 @@
       <Filter>소스 파일</Filter>
     </ClInclude>
     <ClInclude Include="LCRSTree.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="SBTTree.h">
       <Filter>소스 파일</Filter>
     </ClInclude>
   </ItemGroup>

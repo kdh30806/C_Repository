@@ -1,7 +1,7 @@
 #include "LCRSTree.h"
 
 
-int main(void) {
+int main_LCRSTree(void) {
 
 	LCRSNode* Root = LCRS_CreateNode('A');
 
