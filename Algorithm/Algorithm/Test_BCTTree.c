@@ -1,6 +1,6 @@
 #include "SBTTree.h"
 
-int main(void) {
+int main_TestBCTTree(void) {
 SBTNode* A = SBT_CreateNode('A');
 SBTNode* B = SBT_CreateNode('B');
 SBTNode* C = SBT_CreateNode('C');

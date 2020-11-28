@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="소스 파일\Sort">
+      <UniqueIdentifier>{42c29a23-d156-49bb-a02f-c86fbabe943f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="LinkedList.c">
@@ -57,6 +60,21 @@
     <ClCompile Include="Test_BCTTree.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="ExpressionTree.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Test_ExpressionTree.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="DisjointSet.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="BubbleSort.c">
+      <Filter>소스 파일\Sort</Filter>
+    </ClCompile>
+    <ClCompile Include="InsertationSort.c">
+      <Filter>소스 파일\Sort</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="LinkedListStack.h">
@@ -75,6 +93,12 @@
       <Filter>소스 파일</Filter>
     </ClInclude>
     <ClInclude Include="SBTTree.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="ExpressionTree.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="DisjointSet.h">
       <Filter>소스 파일</Filter>
     </ClInclude>
   </ItemGroup>
