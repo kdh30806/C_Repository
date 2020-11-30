@@ -14,7 +14,7 @@ void InsertationSort(int DataSet[], int Length) {
 
 		for (j = 0; j < i; j++) {
 			if (DataSet[j] > value) { //앞의 인덱스의 숫자가 더 클경우
-				memmove(&DataSet[j + 1], &DataSet[j], sizeof(DataSet[0]) * (i - j)); // memmove(새로운 메모리 주소, 원본 데이터, 이동시킬 데이터의 양)
+				memmove(&DataSet[j + 1], &DataSet[j], sizeof(DataSet[0]) * (i - j)); //  memmove(새로운 메모리 주소, 원본 데이터, 이동시킬 데이터의 양)
 				DataSet[j] = value;
 				break;
 			}
@@ -22,7 +22,7 @@ void InsertationSort(int DataSet[], int Length) {
 	}
 }
 
-int main(void) {
+int main_InsertationSort(void) {
 
 	int DataSet[] = { 6, 4, 2, 3, 1, 5 };
 	int Length = sizeof DataSet / sizeof DataSet[0];

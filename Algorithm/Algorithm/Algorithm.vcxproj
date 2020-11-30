@@ -151,6 +151,8 @@
     <ClCompile Include="LinkedList.c" />
     <ClCompile Include="LinkedListStack.c" />
     <ClCompile Include="LinkedQueue.c" />
+    <ClCompile Include="QuickSort.c" />
+    <ClCompile Include="QuickSort2.c" />
     <ClCompile Include="SBTTree.c" />
     <ClCompile Include="Test_BCTTree.c" />
     <ClCompile Include="Test_Calculator.c" />

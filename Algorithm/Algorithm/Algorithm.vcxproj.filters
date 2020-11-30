@@ -75,6 +75,12 @@
     <ClCompile Include="InsertationSort.c">
       <Filter>소스 파일\Sort</Filter>
     </ClCompile>
+    <ClCompile Include="QuickSort.c">
+      <Filter>소스 파일\Sort</Filter>
+    </ClCompile>
+    <ClCompile Include="QuickSort2.c">
+      <Filter>소스 파일\Sort</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="LinkedListStack.h">
