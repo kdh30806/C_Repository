@@ -16,6 +16,9 @@
     <Filter Include="소스 파일\Sort">
       <UniqueIdentifier>{42c29a23-d156-49bb-a02f-c86fbabe943f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\Search">
+      <UniqueIdentifier>{57bc0f50-2f54-4026-99cc-a7fb4d5afaaf}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="LinkedList.c">
@@ -80,6 +83,9 @@
     </ClCompile>
     <ClCompile Include="QuickSort2.c">
       <Filter>소스 파일\Sort</Filter>
+    </ClCompile>
+    <ClCompile Include="SequentialSearch.c">
+      <Filter>소스 파일\Search</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
