@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 typedef struct tagNode {
 	int data;
@@ -42,7 +43,7 @@ Node* SLL_MoveToFront(Node** Head, int Target) { //링크드리스트 전진 이동 순차 �
 
 	while (Current != NULL) { // 현재 노드가 널이 아닐동안 반복
 		if (Current->data == Target) { // 타겟과 데이터 일치하면
-			Match == Current; // Match에 저장
+			Match = Current; // Match에 저장
 			if (Previous != NULL) { // 이전노드가 널이 아니면 => 두번째 노드부터
 				Previous->NextNode = Current->NextNode; // 이전노드의 다음 노드를 현재 노드의 다음 노드로 연결
 
@@ -67,7 +68,7 @@ int Arr_MoveToFront(int DataSet[], int Target, int size) { // 배열 전진 이동 순�
 		if (DataSet[i] == Target) {
 			Target_index = i;
 			if (i != 0) {
-				memmove(&DataSet[1], &DataSet[0], sizeof(DataSet[0]) * i); 
+				memmove(&DataSet[1], &DataSet[0], sizeof(DataSet[0]) * i);
 				// 첫 번째 매개변수는 이동할 새로운 주소
 				// 두 번째 매개변수는 이동할 데이터가 어디서 부터인지를 나타내는 주소
 				// 세 번째 매개변수는 얼마만큼 옮길건지를 표현하는 byte
@@ -128,8 +129,4 @@ int Arr_Transpose(int DataSet[], int Target, int size) {
 		}
 	}
 	return Target_index;
-}
-
-int main(void) {
-
 }

@@ -14,7 +14,7 @@ int CompareScore(const void* _elem1, const void* _elem2) {
 		return 0;
 }
 
-int main(void) {
+int main_qsort2(void) {
 	int DataSet[] = { 6, 4, 2, 3, 1, 5 };
 	int Length = sizeof DataSet / sizeof DataSet[0];
 	int i = 0;

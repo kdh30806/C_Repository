@@ -87,6 +87,12 @@
     <ClCompile Include="SequentialSearch.c">
       <Filter>소스 파일\Search</Filter>
     </ClCompile>
+    <ClCompile Include="BinarySearch2.c">
+      <Filter>소스 파일\Search</Filter>
+    </ClCompile>
+    <ClCompile Include="BinarySearch.c">
+      <Filter>소스 파일\Search</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="LinkedListStack.h">
