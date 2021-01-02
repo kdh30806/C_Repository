@@ -142,6 +142,7 @@
     <ClCompile Include="ArrayStack.c" />
     <ClCompile Include="BinarySearch.c" />
     <ClCompile Include="BinarySearch2.c" />
+    <ClCompile Include="BinarySearchTree.c" />
     <ClCompile Include="BubbleSort.c" />
     <ClCompile Include="Calculator.c" />
     <ClCompile Include="CircularQueue.c" />
@@ -165,6 +166,7 @@
     <ClCompile Include="Test_LinkedQueue.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BinarySearchTree.h" />
     <ClInclude Include="Calculator.h" />
     <ClInclude Include="CircularQueue.h" />
     <ClInclude Include="DisjointSet.h" />

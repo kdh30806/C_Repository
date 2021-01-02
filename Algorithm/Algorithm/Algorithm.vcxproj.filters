@@ -93,6 +93,9 @@
     <ClCompile Include="BinarySearch.c">
       <Filter>소스 파일\Search</Filter>
     </ClCompile>
+    <ClCompile Include="BinarySearchTree.c">
+      <Filter>소스 파일\Search</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="LinkedListStack.h">
@@ -118,6 +121,9 @@
     </ClInclude>
     <ClInclude Include="DisjointSet.h">
       <Filter>소스 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="BinarySearchTree.h">
+      <Filter>소스 파일\Search</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
