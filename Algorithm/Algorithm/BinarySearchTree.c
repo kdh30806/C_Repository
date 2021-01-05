@@ -18,6 +18,7 @@ BSTNode* BST_SearchNode(BSTNode* Tree, int Target) {
 }
 
 void BST_InsertNode(BSTNode** Tree, BSTNode* Child) {
+
 	if ((*Tree)->Data < Child->Data) { // 삽입할 데이터가 루트 노드보다 크면 오른쪽 노드로
 		if ((*Tree)->Right == NULL) { // 오른쪽 노드가 널이면
 			(*Tree)->Right = Child; // 삽입
