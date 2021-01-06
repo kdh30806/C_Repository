@@ -100,5 +100,48 @@ void InsertNode(RBTNode** Tree, RBTNode* NewNode) {
 	NewNode->Left = Nil;
 	NewNode->Right = Nil;
 
-	RBT_REbuildAfterInsert(Tree, NewNode); // 인서트 후에 리빌딩을 통하여 레드블랙트리의 규칙을 유지한다.
+	RBT_RebuildAfterInsert(Tree, NewNode); // 인서트 후에 리빌딩을 통하여 레드블랙트리의 규칙을 유지한다.
+}
+
+void RBT_RebuildAfterInsert(RBTNode** Root, RBTNode* X) {
+	while (X != (*Root) && X->Parent->Color == RED) { // 규칙을 위반하고 있는 동안 계속 반복한다.
+		if (X->Parent == X->Parent->Parent->Left) { // 부모노드가 할아버지 노드의 왼쪽 자식인 경우
+			RBTNode* Uncle = X->Parent->Parent->Right;
+			if (Uncle->Color == RED) { // 1.삼촌 노드가 빨간색인 경우
+				X->Parent->Color = BLACK; 
+				Uncle->Color = BLACK;
+				X->Parent->Parent->Color = RED;
+				X = X->Parent->Parent;
+			}
+			else { // 삼촌 노드가 검은색인 경우
+				if (X == X->Parent->Right) { // 오른쪽 자식인 경우
+					X = X->Parent;
+					RBT_RotateLeft(Root, X); // 왼쪽으로 회전 시킨다.
+				}
+				X->Parent->Color = BLACK;
+				X->Parent->Parent->Color = RED;
+				RBT_RotateRight(Root, X->Parent->Parent);
+			}
+		}
+		else { // 부모노드가 할아버지 노드의 오른쪽 자신인 경우는 위의 왼쪽 자식인 경우에서 좌/우만 바꿔준다.
+			RBTNode* Uncle = X->Parent->Parent->Left;
+			if (Uncle->Color == RED) { // 1.삼촌 노드가 빨간색인 경우
+				X->Parent->Color = BLACK;
+				Uncle->Color = BLACK;
+				X->Parent->Parent->Color = RED;
+				X = X->Parent->Parent;
+			}
+			else { // 삼촌 노드가 검은색인 경우
+				if (X == X->Parent->Left) { // 왼쪽 자식인 경우
+					X = X->Parent;
+					RBT_RotateRight(Root, X); // 오른쪽으로 회전 시킨다.
+				}
+				X->Parent->Color = BLACK;
+				X->Parent->Parent->Color = RED;
+				RBT_RotateLeft(Root, X->Parent->Parent);
+			}
+		}
+	}
+
+	(*Root)->Color = BLACK;
 }
