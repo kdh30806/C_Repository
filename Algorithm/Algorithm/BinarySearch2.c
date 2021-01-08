@@ -14,7 +14,7 @@ int CompareInt(const void* elem1, const void* elem2){
 	}
 }
 
-int main(void) {
+int main_BinarySearch2(void) {
 	int Dataset[] = { 1, 9 ,4 ,6, 40, 35, 90, 30, 60, 20 };
 	int Length = sizeof Dataset / sizeof Dataset[0];
 	int Target = 4;

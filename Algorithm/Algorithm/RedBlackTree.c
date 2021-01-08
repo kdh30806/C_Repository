@@ -1,14 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
-
-typedef struct tagRBTNode {
-	struct tagRBTNode* Parent;
-	struct tagRBTNode* Left;
-	struct tagRBTNode* Right;
-
-	enum {RED, BLACK} Color;
-	int Data
-}RBTNode;
+#include "RedBlackTree.h"
 
 extern RBTNode* Nil;
 
@@ -93,7 +83,7 @@ void RBT_InsertNodeHelper(RBTNode** Tree, RBTNode* NewNode) {
 	}
 }
 
-void InsertNode(RBTNode** Tree, RBTNode* NewNode) {
+void RBT_InsertNode(RBTNode** Tree, RBTNode* NewNode) {
 	RBT_InsertNodeHelper(Tree, NewNode);
 
 	NewNode->Color = RED;
@@ -144,4 +134,221 @@ void RBT_RebuildAfterInsert(RBTNode** Root, RBTNode* X) {
 	}
 
 	(*Root)->Color = BLACK;
+}
+
+void RBT_RebuildAfterRemove(RBTNode** Root, RBTNode* Successor) {
+
+	RBTNode* Sibling = NULL;
+
+	while (Successor->Parent != NULL && Successor->Color == BLACK) { // 이중흑색이 루트 까지 가거나 빨간색 노드에게 넘어가면 반복 종료
+		
+		if (Successor == Successor->Parent->Left) { // 이중흑색 노드가 왼쪽인 경우
+			Sibling = Successor->Parent->Right;
+			// 1. 형제가 빨간색인 경우
+			if (Sibling->Color == RED) {
+				Sibling->Color = BLACK;
+				Successor->Parent->Color = RED;
+				RBT_RotateLeft(Root, Successor->Parent);
+			}
+			//2. 형제가 검은색인 경우
+			else {
+				// 2-1. 형제의 양쪽 자식이 모두 검은색인 경우
+				if (Sibling->Left->Color == BLACK && Sibling->Right->Color == BLACK) {
+					Sibling->Color = RED;
+					Successor = Successor->Parent;
+				}
+				// 2-2. 왼쪽 자식이 빨간색인 경우
+				else {
+					if (Sibling->Left->Color == RED) {
+						Sibling->Left->Color = BLACK;
+						Sibling->Color = RED;
+
+						RBT_RotateRight(Root, Sibling);
+						Sibling = Successor->Parent->Right;
+					}
+					// 2-3. 오른쪽 자식이 빨간색인 경우
+					Sibling->Color = Successor->Parent->Color;
+					Successor->Parent->Color = BLACK;
+					Sibling->Right->Color = BLACK;
+					RBT_RotateLeft(Root, Successor->Parent);
+					Successor = (*Root);
+				}
+			}
+		}
+		else {
+			Sibling = Successor->Parent->Left;
+			// 1. 형제가 빨간색인 경우
+			if (Sibling->Color == RED) {
+				Sibling->Color = BLACK;
+				Successor->Parent->Color = RED;
+				RBT_RotateRight(Root, Successor->Parent);
+			}
+			//2. 형제가 검은색인 경우
+			else {
+				// 2-1. 형제의 양쪽 자식이 모두 검은색인 경우
+				if (Sibling->Right->Color == BLACK && Sibling->Left->Color == BLACK) {
+					Sibling->Color = RED;
+					Successor = Successor->Parent;
+				}
+				// 2-2. 오른쪽 자식이 빨간색인 경우
+				else {
+					if (Sibling->Right->Color == RED) {
+						Sibling->Right->Color = BLACK;
+						Sibling->Color = RED;
+
+						RBT_RotateLeft(Root, Sibling);
+						Sibling = Successor->Parent->Left;
+					}
+					// 2-3. 오른쪽 자식이 빨간색인 경우
+					Sibling->Color = Successor->Parent->Color;
+					Successor->Parent->Color = BLACK;
+					Sibling->Right->Color = BLACK;
+					RBT_RotateRight(Root, Successor->Parent);
+					Successor = (*Root);
+				}
+			}
+		}
+	}
+}
+
+RBTNode* RBT_RemoveNode(RBTNode** Root, int Data) {
+	RBTNode* Removed = NULL;
+	RBTNode* Successor = NULL;
+	RBTNode* Target = RBT_SearchNode((*Root), Data);
+
+	if (Target == NULL) {
+		return NULL;
+	}
+
+	if (Target->Left == Nil || Target->Right == Nil) {
+		Removed = Target;
+	}
+	else {
+		Removed = BST_SearchMinNode(Target->Right);
+		Target->Data = Removed->Data;
+	}
+
+	if (Removed->Left != Nil) {
+		Successor = Removed->Left;
+	}
+	else {
+		Successor = Removed->Right;
+	}
+
+	Successor->Parent = Removed->Parent;
+
+	if (Removed->Parent == NULL) {
+		(*Root) = Successor;
+	}
+	else {
+		if (Removed == Removed->Parent->Left) {
+			Removed->Parent->Left = Successor;
+		}
+		else {
+			Removed->Parent->Right = Successor;
+		}
+	}
+
+	if (Removed->Color == BLACK) // 삭제한 노드가 검은색인 경우 이중흑색이기 때문에 처리를 위해 리빌딩 함수 호출
+		RBT_RebuildAfterRemove(Root, Successor);
+
+	return Removed;
+}
+
+RBTNode* RBT_SearchNode(RBTNode* Tree, int Target) {
+	if (Tree == Nil)
+		return NULL;
+
+	if (Tree->Data > Target) {
+		return RBT_SearchNode(Tree->Left, Target);
+	}
+	else if(Tree->Data < Target){
+		return RBT_SearchNode(Tree->Right, Target);
+	}
+	else {
+		return Tree;
+	}
+}
+
+RBTNode* BST_SearchMinNode(RBTNode* Tree) {
+	if (Tree == Nil) {
+		return Nil;
+	}
+
+	if (Tree->Left == Nil) {
+		return Tree;
+	}
+	else {
+		return BST_SearchMinNode(Tree->Left);
+	}
+		
+}
+
+void RBT_DestroyNode(RBTNode* Node) {
+	free(Node);
+}
+
+void RBT_DestroyTree(RBTNode* Tree) {
+	if (Tree->Right != Nil) {
+		RBT_DestroyTree(Tree->Right);
+	}
+
+	if (Tree->Left != Nil) {
+		RBT_DestroyTree(Tree->Left);
+	}
+
+	Tree->Left = Nil;
+	Tree->Right = Nil;
+
+	RBT_DestroyNode(Tree);
+}
+
+RBTNode* RBT_CreateNode(int NewData) {
+	RBTNode* NewNode = (RBTNode*)malloc(sizeof(RBTNode));
+	NewNode->Parent = NULL;
+	NewNode->Left = NULL;
+	NewNode->Right = NULL;
+	NewNode->Data = NewData;
+	NewNode->Color = BLACK;
+
+	return NewNode;
+}
+
+void RBT_PrintTree(RBTNode* Node, int Depth, int BlackCount) {
+	int i = 0;
+	char c = 'X';
+	int v = -1;
+	char cnt[100];
+
+	if (Node == NULL || Node == Nil)
+		return;
+
+	if (Node->Color == BLACK)
+		BlackCount++;
+
+	if (Node->Parent != NULL) {
+		v = Node->Parent->Data;
+
+		if (Node->Parent->Left == Node) {
+			c = 'L';
+		}
+		else {
+			c = 'R';
+		}
+	}
+
+	if (Node->Left == Nil && Node->Right == Nil) {
+		sprintf(cnt, "------------ %d", BlackCount);
+	}
+	else {
+		sprintf(cnt, "");
+	}
+
+	for (i = 0; i < Depth; i++) {
+		printf("  ");
+	}
+	printf("%d  %s [%c,%d] %s\n", Node->Data, (Node->Color == RED) ? "RED" : "BLACK", c, v, cnt);
+
+	RBT_PrintTree(Node->Left, Depth + 1, BlackCount);
+	RBT_PrintTree(Node->Right, Depth + 1, BlackCount);
 }

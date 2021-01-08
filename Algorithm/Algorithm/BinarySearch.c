@@ -25,29 +25,29 @@ int BinarySearch(int DataSet[], int Size, int Target) {
     return 0;
 }
 
-int CompareInt(const void* elem1, const void* elem2) {
+//int CompareInt(const void* elem1, const void* elem2) {
+//
+//    if (*(int*)elem1 > * (int*)elem2) {
+//        return 1;
+//    }
+//    else if (*(int*)elem1 < *(int*)elem2) {
+//        return -1;
+//    }
+//    else {
+//        return 0;
+//    }
+//}
 
-    if (*(int*)elem1 > * (int*)elem2) {
-        return 1;
-    }
-    else if (*(int*)elem1 < *(int*)elem2) {
-        return -1;
-    }
-    else {
-        return 0;
-    }
-}
-
-int main(void) {
-    int Dataset[] = { 1, 9 ,4 ,6, 40, 35, 90, 30, 60, 20 };
-    int i = 0;
-    int Found = 0;
-    int Length = sizeof Dataset / sizeof Dataset[0];
-
-    qsort((void*)Dataset, Length, sizeof Dataset[0], CompareInt);
-    Found = BinarySearch(Dataset, Length, 6);
-
-    printf("찾아낸 목표 값의 인덱스 번호 : %d ", Found);
-
-    return 0;
-}
+//int main_BinarySearch(void) {
+//    int Dataset[] = { 1, 9 ,4 ,6, 40, 35, 90, 30, 60, 20 };
+//    int i = 0;
+//    int Found = 0;
+//    int Length = sizeof Dataset / sizeof Dataset[0];
+//
+//    qsort((void*)Dataset, Length, sizeof Dataset[0], CompareInt);
+//    Found = BinarySearch(Dataset, Length, 6);
+//
+//    printf("찾아낸 목표 값의 인덱스 번호 : %d ", Found);
+//
+//    return 0;
+//}
