@@ -2,7 +2,7 @@
 
 RBTNode* Nil;
 
-int main(void) {
+int main_RedBlackTree(void) {
 	RBTNode* Tree = NULL;
 	RBTNode* Node = NULL;
 

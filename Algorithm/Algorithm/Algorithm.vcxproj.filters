@@ -102,6 +102,12 @@
     <ClCompile Include="Test_RedBlackTree.c">
       <Filter>소스 파일\Search</Filter>
     </ClCompile>
+    <ClCompile Include="Heap.c">
+      <Filter>소스 파일\Search</Filter>
+    </ClCompile>
+    <ClCompile Include="Test_Heap.c">
+      <Filter>소스 파일\Search</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="LinkedListStack.h">
@@ -132,6 +138,9 @@
       <Filter>소스 파일\Search</Filter>
     </ClInclude>
     <ClInclude Include="RedBlackTree.h">
+      <Filter>소스 파일\Search</Filter>
+    </ClInclude>
+    <ClInclude Include="Heap.h">
       <Filter>소스 파일\Search</Filter>
     </ClInclude>
   </ItemGroup>
