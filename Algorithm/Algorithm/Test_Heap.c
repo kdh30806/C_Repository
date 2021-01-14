@@ -1,6 +1,6 @@
 #include "Heap.h"
 
-int main(void)
+int main_Heap(void)
 {
     Heap* H = HEAP_Create(3);
     HeapNode MinNode;

@@ -139,6 +139,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\..\..\AppData\Local\Temp\BNZ.600044b857eb786a\PriorityQueue.c" />
+    <ClCompile Include="..\..\..\..\..\AppData\Local\Temp\BNZ.600044b857eb786a\Test_PriorityQueue.c" />
     <ClCompile Include="ArrayStack.c" />
     <ClCompile Include="BinarySearch.c" />
     <ClCompile Include="BinarySearch2.c" />
@@ -170,6 +172,7 @@
     <ClCompile Include="Test_RedBlackTree.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\..\..\AppData\Local\Temp\BNZ.600044b857eb786a\PriorityQueue.h" />
     <ClInclude Include="BinarySearchTree.h" />
     <ClInclude Include="Calculator.h" />
     <ClInclude Include="CircularQueue.h" />
